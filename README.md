@@ -153,7 +153,27 @@ To run the provided test cases in C (`fourier.c` and `matrix.c`) using the libra
 - **Binary Distribution**: By providing only the compiled `.so` or `.dll` files, you retain ownership of your source code.
 - **Interface Sharing**: Only share the `mylibrary.h` file to allow test cases to interact with the library.
 - **Cross-Platform Use**: Provide both `.so` and `.dll` versions for compatibility across Linux/macOS and Windows.
+## Functions
 
+1. **`mat_mult(double* A, double* B, double* C, int n)`**:
+   - Performs matrix multiplication for two n x n matrices. The result is stored in the matrix C.
+
+2. **`dft(double complex* input, double complex* output, int n)`**:
+   - Computes the Discrete Fourier Transform (DFT) of the input array, producing the transformed output in the specified output array.
+
+3. **`gradient_descent(double (*func)(double), double (*grad)(double), double* x, double lr, int steps)`**:
+   - Optimizes a given mathematical function using the gradient descent algorithm. It iteratively updates the value of x based on the learning rate (lr) and the gradient of the function for a specified number of steps.
+
+4. **`mat_mult_c(double* A, double* B, double* C, int n)`** (Wrapper function for C interoperability):
+   - A wrapper function to call `mat_mult` for compatibility with C/C++ interfaces.
+
+5. **`dft_c(double complex* input, double complex* output, int n)`** (Wrapper function for C interoperability):
+   - A wrapper function to call `dft` for compatibility with C/C++ interfaces.
+
+6. **`gradient_descent_c(double (*func)(double), double (*grad)(double), double* x, double lr, int steps)`** (Wrapper function for C interoperability):
+   - A wrapper function to enable calling `gradient_descent` easily from C/C++.
+  
+     
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
